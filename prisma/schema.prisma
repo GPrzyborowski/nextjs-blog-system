@@ -9,10 +9,12 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  login    String @unique // Login musi być unikalny, żebyś mógł się nim logować
-  password String
-  posts    Post[]
+  id        String   @id @default(uuid())
+  login     String   @unique
+  password  String
+  bio       String?
+  createdAt DateTime @default(now())
+  posts     Post[]
 }
 
 model Post {
